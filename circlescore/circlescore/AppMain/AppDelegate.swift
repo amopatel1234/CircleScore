@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var rootViewController: UINavigationController {
+        return self.window?.rootViewController as! UINavigationController
+    }
 
-
+    private lazy var appCoordinator: Coordinator = AppCoordinator(router: Router(rootController: self.rootViewController))
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.appCoordinator.start()
+        
         return true
     }
 
