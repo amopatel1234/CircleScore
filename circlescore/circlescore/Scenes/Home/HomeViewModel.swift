@@ -8,27 +8,36 @@
 
 import Foundation
 
+protocol HomeViewModelDelegate: class {
+    func didFinishLoadingData(creditScore: Int, maxScore: Int)
+    func didFailLoadingData()
+    func loadingDataFromEndpoint()
+}
+
 final class HomeViewModel {
     private let service: HomeService
     private let coordinator: HomeCoordinator?
+    
+    weak var delegate: HomeViewModelDelegate?
     
     init(service: HomeService, coordinator: HomeCoordinator) {
         self.service = service
         self.coordinator = coordinator
     }
     
-    
     func getDataFromEndPoint() {
+        delegate?.loadingDataFromEndpoint()
         service.getDataFromEndPoint { (results) in
             switch results {
             case let .success(creditScoreModel):
-                print(creditScoreModel.score)
-                break
+                DispatchQueue.main.async {
+                    self.delegate?.didFinishLoadingData(creditScore: creditScoreModel.score, maxScore: creditScoreModel.maxScore)
+                }
             case let .failure(error):
                 DispatchQueue.main.async {
-                    self.coordinator?.showError(error: error)
+                    self.delegate?.didFailLoadingData()
+                    self.displayErrorToUser(error: error)
                 }
-                break
             }
         }
     }
@@ -36,4 +45,14 @@ final class HomeViewModel {
     func displayErrorToUser(error: Error) {
         coordinator?.showError(error: error)
     }
+    
+//    func getCreditScore() -> Int {
+//        guard let score = creditScoreModel?.score else { return 0}
+//        return score
+//    }
+//
+//    func getMaxScore() -> Int {
+//        guard let maxScore = creditScoreModel?.maxScore else { return 0}
+//        return maxScore
+//    }
 }

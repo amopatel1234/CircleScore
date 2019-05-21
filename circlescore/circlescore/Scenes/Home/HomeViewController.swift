@@ -12,6 +12,10 @@ class HomeViewController: UIViewController {
     
     private let viewModel: HomeViewModel
     
+    @IBOutlet weak var donutView: DonutProgressView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var retryButton: UIButton!
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -23,24 +27,43 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.delegate = self
+        fetchData()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func retryTapped(_ sender: Any) {
+        fetchData()
+    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func fetchData() {
         viewModel.getDataFromEndPoint()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func showLoadingView() {
+        loadingView.isHidden = false
     }
-    */
+    
+    func hideLoadingView() {
+        loadingView.isHidden = true
+    }
 
+    func updateDocuntViewProgress(creditScore: Int, maxScore: Int) {
+        donutView.updateScoreAndMaxScore(score: creditScore, maxScore: maxScore)
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func didFailLoadingData() {
+        hideLoadingView()
+    }
+    
+    func didFinishLoadingData(creditScore: Int, maxScore: Int) {
+        hideLoadingView()
+        updateDocuntViewProgress(creditScore: creditScore, maxScore: maxScore)
+    }
+    
+    func loadingDataFromEndpoint() {
+        showLoadingView()
+    }
 }

@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="circlescore" customModuleProvider="target">
             <connections>
+                <outlet property="donutView" destination="cCO-7M-m4i" id="lWg-Tq-haF"/>
+                <outlet property="loadingView" destination="LCe-dJ-FM8" id="TrC-U4-tzP"/>
+                <outlet property="retryButton" destination="Biv-c4-AxD" id="BgR-cG-av2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,15 +23,61 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt7-Jh-dPt">
-                    <rect key="frame" x="184" y="438" width="46" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-7M-m4i" customClass="DonutProgressView" customModule="circlescore" customModuleProvider="target">
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="k8k-wg-XyD"/>
+                        <constraint firstAttribute="width" constant="300" id="nEm-ZD-B3M"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCe-dJ-FM8">
+                    <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bMC-Z2-Gpu">
+                            <rect key="frame" x="169.5" y="413.5" width="75" height="69.5"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bfX-dP-7GV">
+                                    <rect key="frame" x="19" y="0.0" width="37" height="37"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4J-E8-gMI">
+                                    <rect key="frame" x="0.0" y="49" width="75" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.70194777397260277" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bMC-Z2-Gpu" firstAttribute="centerY" secondItem="LCe-dJ-FM8" secondAttribute="centerY" id="IcI-4O-66t"/>
+                        <constraint firstItem="bMC-Z2-Gpu" firstAttribute="centerX" secondItem="LCe-dJ-FM8" secondAttribute="centerX" id="Mcc-ke-Pde"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biv-c4-AxD">
+                    <rect key="frame" x="162" y="778" width="90" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Oas-r8-YRz"/>
+                        <constraint firstAttribute="width" constant="90" id="g9H-ez-AMM"/>
+                    </constraints>
+                    <state key="normal" title="Retry"/>
+                    <connections>
+                        <action selector="retryTapped:" destination="-1" eventType="touchUpInside" id="66l-Fp-1JR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LCe-dJ-FM8" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="AnR-fA-aLH"/>
+                <constraint firstItem="cCO-7M-m4i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FFg-vF-PWb"/>
+                <constraint firstItem="LCe-dJ-FM8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="JWa-Jx-XYr"/>
+                <constraint firstItem="Biv-c4-AxD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Lfh-IY-Z8B"/>
+                <constraint firstItem="LCe-dJ-FM8" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="OVJ-7x-dwg"/>
+                <constraint firstItem="cCO-7M-m4i" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Y0u-fi-cfr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Biv-c4-AxD" secondAttribute="bottom" constant="40" id="f4o-co-McU"/>
+                <constraint firstItem="LCe-dJ-FM8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="fL4-Wa-fj2"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
