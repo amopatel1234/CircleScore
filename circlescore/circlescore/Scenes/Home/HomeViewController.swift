@@ -9,11 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    weak var coordinator: HomeCoordinator?
     
-    init(coordinator: HomeCoordinator) {
-        self.coordinator = coordinator
+    private let viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,21 +30,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let homeService = HomeService()
-        
-        homeService.getDataFromEndPoint { (results) in
-            switch results {
-            case let .success(creditScoreModel):
-                print(creditScoreModel.score)
-                break
-            case let .failure(error):
-                DispatchQueue.main.async {
-                    self.coordinator?.showError(error: error)
-                }
-                break
-            }
-        }
+        viewModel.getDataFromEndPoint()
     }
 
     /*

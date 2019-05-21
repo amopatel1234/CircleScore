@@ -24,6 +24,7 @@
 		3BC6018422935F3D001A1056 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6018322935F3D001A1056 /* URLSessionHTTPClient.swift */; };
 		3BC6018622936768001A1056 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6018522936768001A1056 /* HomeService.swift */; };
 		3BC601882293F503001A1056 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC601872293F503001A1056 /* CreditScore.swift */; };
+		3BC6018C22940947001A1056 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6018B22940947001A1056 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3BC6018322935F3D001A1056 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		3BC6018522936768001A1056 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		3BC601872293F503001A1056 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
+		3BC6018B22940947001A1056 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				3BC6017A22935374001A1056 /* HomeViewController.xib */,
 				3BC60189229408DB001A1056 /* Service */,
 				3BC6018A229408E5001A1056 /* Model */,
+				3BC6018B22940947001A1056 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				3BC6016B22934D7F001A1056 /* BaseCoordinator.swift in Sources */,
 				3BC6018222935EA0001A1056 /* HTTPClient.swift in Sources */,
 				3BC6017122934D9E001A1056 /* Presentable.swift in Sources */,
+				3BC6018C22940947001A1056 /* HomeViewModel.swift in Sources */,
 				3BC6018622936768001A1056 /* HomeService.swift in Sources */,
 				3BC601782293530E001A1056 /* HomeCoordinator.swift in Sources */,
 				3BC6016D22934D88001A1056 /* Coordinator.swift in Sources */,

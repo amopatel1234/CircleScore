@@ -20,7 +20,10 @@ final class HomeCoordinator: BaseCoordinator {
     }
     
     func showHomeViewController() {
-        let homeViewController = HomeViewController(coordinator: self)
+        
+        let viewModel = HomeViewModel(service: HomeService(), coordinator: self)
+        
+        let homeViewController = HomeViewController(viewModel: viewModel)
         
         router.setRootModule(homeViewController)
     }
