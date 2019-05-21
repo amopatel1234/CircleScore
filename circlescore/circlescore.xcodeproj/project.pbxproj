@@ -10,7 +10,6 @@
 		3BC6014A22933A6D001A1056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6014922933A6D001A1056 /* AppDelegate.swift */; };
 		3BC6015122933A6F001A1056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC6015022933A6F001A1056 /* Assets.xcassets */; };
 		3BC6015422933A6F001A1056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC6015222933A6F001A1056 /* LaunchScreen.storyboard */; };
-		3BC6015F22933A70001A1056 /* circlescoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6015E22933A70001A1056 /* circlescoreTests.swift */; };
 		3BC6016B22934D7F001A1056 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6016A22934D7F001A1056 /* BaseCoordinator.swift */; };
 		3BC6016D22934D88001A1056 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6016C22934D88001A1056 /* Coordinator.swift */; };
 		3BC6016F22934D94001A1056 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6016E22934D94001A1056 /* Router.swift */; };
@@ -27,6 +26,7 @@
 		3BC6018C22940947001A1056 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6018B22940947001A1056 /* HomeViewModel.swift */; };
 		3BC6018F22940C34001A1056 /* DonutProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6018E22940C34001A1056 /* DonutProgressView.swift */; };
 		3BC6019122940C4D001A1056 /* DonutProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC6019022940C4D001A1056 /* DonutProgressView.xib */; };
+		3BC6019322945004001A1056 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6019222945004001A1056 /* URLSessionHTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		3BC6015322933A6F001A1056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BC6015522933A6F001A1056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BC6015A22933A70001A1056 /* circlescoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = circlescoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BC6015E22933A70001A1056 /* circlescoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circlescoreTests.swift; sourceTree = "<group>"; };
 		3BC6016022933A70001A1056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BC6016A22934D7F001A1056 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		3BC6016C22934D88001A1056 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		3BC6018B22940947001A1056 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3BC6018E22940C34001A1056 /* DonutProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutProgressView.swift; sourceTree = "<group>"; };
 		3BC6019022940C4D001A1056 /* DonutProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonutProgressView.xib; sourceTree = "<group>"; };
+		3BC6019222945004001A1056 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +121,8 @@
 		3BC6015D22933A70001A1056 /* circlescoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				3BC6015E22933A70001A1056 /* circlescoreTests.swift */,
 				3BC6016022933A70001A1056 /* Info.plist */,
+				3BC6019222945004001A1056 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = circlescoreTests;
 			sourceTree = "<group>";
@@ -255,6 +255,7 @@
 					};
 					3BC6015922933A70001A1056 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 3BC6014522933A6D001A1056;
 					};
 				};
@@ -326,7 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC6015F22933A70001A1056 /* circlescoreTests.swift in Sources */,
+				3BC6019322945004001A1056 /* URLSessionHTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +518,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WV5H9HP6KR;
 				INFOPLIST_FILE = circlescoreTests/Info.plist;
@@ -527,6 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amishpatel.circlescoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circlescore.app/circlescore";
@@ -538,6 +541,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WV5H9HP6KR;
 				INFOPLIST_FILE = circlescoreTests/Info.plist;
