@@ -20,8 +20,12 @@ final class HomeCoordinator: BaseCoordinator {
     }
     
     func showHomeViewController() {
-        let homeViewController = HomeViewController()
+        let homeViewController = HomeViewController(coordinator: self)
         
         router.setRootModule(homeViewController)
+    }
+    
+    func showError(error: Error) {
+        router.showErrorAlert(error: error)
     }
 }
