@@ -30,11 +30,8 @@ final class HomeService {
                 } catch let error {
                     completion(.failure(error))
                 }
-                
-                break
             case let .failure(error):
                 completion(.failure(error))
-                break
             }
         }
     }

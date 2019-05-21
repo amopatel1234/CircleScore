@@ -45,14 +45,4 @@ final class HomeViewModel {
     func displayErrorToUser(error: Error) {
         coordinator?.showError(error: error)
     }
-    
-//    func getCreditScore() -> Int {
-//        guard let score = creditScoreModel?.score else { return 0}
-//        return score
-//    }
-//
-//    func getMaxScore() -> Int {
-//        guard let maxScore = creditScoreModel?.maxScore else { return 0}
-//        return maxScore
-//    }
 }
